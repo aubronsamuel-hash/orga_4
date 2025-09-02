@@ -24,5 +24,10 @@ Write-Host "[test_all] Exporting auth spec..."
 Write-Host "[test_all] Running password policy tests..."
 & "$PSScriptRoot\tests\spec_auth_password_policy.ps1"
 
+Write-Host "[test_all] Exporting org settings spec..."
+& "$PSScriptRoot\specs\export_settings.ps1"
+Write-Host "[test_all] Running org settings TZ tests..."
+& "$PSScriptRoot\tests\spec_org_settings_tz.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0
