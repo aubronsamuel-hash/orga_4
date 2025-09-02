@@ -110,3 +110,4 @@ pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
 
 ## CI
 - Workflow `roadmap-guard` sur Windows. Echec si la roadmap est incoherente.
+- Workflow `docs-guard` sur Windows. Exporte toutes les specs puis verifie la presence des references dans `docs/roadmap/index.md`.
