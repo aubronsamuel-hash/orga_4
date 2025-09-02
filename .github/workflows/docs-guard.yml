@@ -9,10 +9,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run docs guard
+      - name: Export specs (ensure up-to-date)
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           Set-StrictMode -Version Latest
           ./PS1/specs/export_employe.ps1
+          ./PS1/specs/export_org.ps1
+          ./PS1/specs/export_rbac.ps1
+          ./PS1/specs/export_auth.ps1
+          ./PS1/specs/export_settings.ps1
+      - name: Run docs guard
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          Set-StrictMode -Version Latest
           ./PS1/tools/docs_guard.ps1
