@@ -6,7 +6,7 @@
 Objectif:
   Mettre en place le socle conceptuel pour la gestion des salaries (modele de donnees cible, champs requis, contraintes). Preparer le plan d’API CRUD et les regles de validation.
 Livrables:
-  - Spec fonctionnelle "Employe v1" (champs: id, nom, prenom, email, telephone, role_metier, service, site, statut, date_entree, date_sortie, contrat_type, temps_travail, manager_id).
+  - Spec fonctionnelle "Employe v1" (docs/specs/employee_v1.md) (champs: id, nom, prenom, email, telephone, role_metier, service, site, statut, date_entree, date_sortie, contrat_type, temps_travail, manager_id).
   - Spec API preliminaire (CRUD /api/v1/employees : GET list/detail, POST, PATCH, DELETE; pagination par defaut).
   - Diagramme de donnees (simple): Employe (1) -> (0..1) Manager (self-reference).
 Scripts:

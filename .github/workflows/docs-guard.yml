@@ -1,0 +1,18 @@
+name: docs-guard
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+jobs:
+  docs-guard:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run docs guard
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          Set-StrictMode -Version Latest
+          ./PS1/specs/export_employe.ps1
+          ./PS1/tools/docs_guard.ps1
