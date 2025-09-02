@@ -24,5 +24,10 @@ Write-Host "[smoke] Export auth spec..."
 Write-Host "[smoke] Password policy quick test..."
 & "$PSScriptRoot\tests\spec_auth_password_policy.ps1"
 
+Write-Host "[smoke] Export org settings spec..."
+& "$PSScriptRoot\specs\export_settings.ps1"
+Write-Host "[smoke] Org settings TZ quick test..."
+& "$PSScriptRoot\tests\spec_org_settings_tz.ps1"
+
 Write-Host "[smoke] OK"
 Exit 0
