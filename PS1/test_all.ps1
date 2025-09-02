@@ -44,5 +44,10 @@ Write-Host "[test_all] Exporting custom fields spec..."
 Write-Host "[test_all] Running custom fields tests..."
 & "$PSScriptRoot\tests\spec_custom_fields_validate.ps1"
 
+Write-Host "[test_all] Exporting import/export spec & samples..."
+& "$PSScriptRoot\specs\export_import.ps1"
+Write-Host "[test_all] Running import/export CSV tests..."
+& "$PSScriptRoot\tests\spec_import_csv.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0

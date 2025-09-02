@@ -191,6 +191,29 @@ pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
 
 ```
 
+## Import/Export v1 (Etape 9)
+- Spec: `docs/specs/import_export_v1.md` (v1.0.0).
+- Samples: `docs/samples/employees_sample_ok.csv`, `docs/samples/employees_sample_dup.csv`.
+- Export:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\specs\export_import.ps1
+
+```
+- Tests:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\tests\spec_import_csv.ps1
+
+```
+- Packs rapides:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+
+```
+
 ## Scripts
 - `PS1\dev_up.ps1` : mise en route locale (etape 0: no-op).
 - `PS1\test_all.ps1` : lance le garde-fou de la roadmap.
