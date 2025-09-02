@@ -6,15 +6,14 @@ on:
     branches: [ main ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup PowerShell 7
-        uses: PowerShell/setup-pwsh@v2
-        with:
-          pwsh-version: '7.4.x'
+      - name: Check pwsh version
+        shell: pwsh
+        run: pwsh -v
 
-      - name: Run PS script
+      - name: Run init script
         shell: pwsh
         run: ./PS1/init_repo.ps1 -Verbose
