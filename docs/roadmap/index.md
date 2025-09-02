@@ -32,6 +32,13 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
 - roadmap_181-190.md : Onboarding, talents & performance (181-190)
 - roadmap_191-200.md : Onboarding, talents & performance (191-200)
 
+## Specs validees
+- [Employe v1](../specs/employee_v1.md)
+- [Organigramme v1](../specs/orgchart_v1.md)
+- [RBAC v1](../specs/rbac_v1.md)
+- [Auth v1](../specs/auth_v1.md)
+- [Org Settings v1](../specs/org_settings_v1.md)
+
 ## Rattachements aux themes de la source fournie
 - RH de base & planification: employes, organigramme, roles, auth, parametres, notifications, multilingue, champs personnalises, import/export, journalisation, plannings, disponibilites, conflits, auto-planification, sync calendrier, historique, multi-sites, creneaux speciaux, notifications planning, rapports planning.
 - Conges/absences/temps: demandes/validation conges, soldes, absences, regles, integration au planning, notifications, report/expiration, conges speciaux, statistiques, export, pointage, validation heures, heures supp, RTT/repos, temps reel, absence non justifiee, correlation planning/pointage, export vers paie, pointage mobile, rapports de temps.
