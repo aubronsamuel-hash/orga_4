@@ -6,13 +6,11 @@ Write-Host "[test_all] Running roadmap guard..."
 
 Write-Host "[test_all] Exporting employee spec..."
 & "$PSScriptRoot\specs\export_employe.ps1"
-
 Write-Host "[test_all] Running spec email regex tests..."
 & "$PSScriptRoot\tests\spec_employee_email_regex.ps1"
 
 Write-Host "[test_all] Exporting orgchart spec..."
 & "$PSScriptRoot\specs\export_org.ps1"
-
 Write-Host "[test_all] Running org hierarchy tests..."
 & "$PSScriptRoot\tests\spec_org_hierarchy.ps1"
 
@@ -20,6 +18,11 @@ Write-Host "[test_all] Exporting RBAC spec..."
 & "$PSScriptRoot\specs\export_rbac.ps1"
 Write-Host "[test_all] Running RBAC tests..."
 & "$PSScriptRoot\tests\spec_rbac_permissions.ps1"
+
+Write-Host "[test_all] Exporting auth spec..."
+& "$PSScriptRoot\specs\export_auth.ps1"
+Write-Host "[test_all] Running password policy tests..."
+& "$PSScriptRoot\tests\spec_auth_password_policy.ps1"
 
 Write-Host "[test_all] DONE"
 Exit 0
