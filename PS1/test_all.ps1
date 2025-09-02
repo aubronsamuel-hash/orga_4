@@ -29,5 +29,10 @@ Write-Host "[test_all] Exporting org settings spec..."
 Write-Host "[test_all] Running org settings TZ tests..."
 & "$PSScriptRoot\tests\spec_org_settings_tz.ps1"
 
+Write-Host "[test_all] Exporting notifications spec..."
+& "$PSScriptRoot\specs\export_notifications.ps1"
+Write-Host "[test_all] Running notifications render tests..."
+& "$PSScriptRoot\tests\spec_notifications_render.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0

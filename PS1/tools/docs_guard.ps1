@@ -66,5 +66,17 @@ if ($indexText -notmatch "Org Settings v1") {
 }
 if (-not (Test-Path (Join-Path $root $specMdSettings))) { Write-Error "docs_guard: $specMdSettings missing" }
 
+$specMdNotif = "docs/specs/notifications_v1.md"
+
+if ($readmeText -notmatch [regex]::Escape($specMdNotif)) {
+Write-Error "docs_guard: README must reference $specMdNotif"
+}
+if ($indexText -notmatch "Notifications v1") {
+Write-Error "docs_guard: index.md must mention Notifications v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdNotif))) {
+Write-Error "docs_guard: $specMdNotif missing"
+}
+
 Write-Host "docs_guard: OK"
 Exit 0
