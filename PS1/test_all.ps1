@@ -34,5 +34,10 @@ Write-Host "[test_all] Exporting notifications spec..."
 Write-Host "[test_all] Running notifications render tests..."
 & "$PSScriptRoot\tests\spec_notifications_render.ps1"
 
+Write-Host "[test_all] Exporting i18n spec..."
+& "$PSScriptRoot\specs\export_i18n.ps1"
+Write-Host "[test_all] Running i18n policy tests..."
+& "$PSScriptRoot\tests\spec_i18n_policy.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0

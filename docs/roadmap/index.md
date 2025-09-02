@@ -13,6 +13,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 4 - Authentification: voir `docs/specs/auth_v1.md` (v1.0.0). Politique MDP 12+, verrou 5/15 min, messages FR.
   - Etape 5 - Parametres entreprise: voir `docs/specs/org_settings_v1.md` (v1.0.0). Parametres critiques: timezone_default, devise_default, locale_default, formats.
   - Etape 6 - Notifications systeme: voir `docs/specs/notifications_v1.md` (v1.0.0). Triggers + templates (placeholders {{var}}).
+  - Etape 7 - Support multilingue (UI): voir `docs/specs/i18n_v1.md` (i18n v1.0.0). Fallback -> FR; cles `domaine.sousdomaine.element`.
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)

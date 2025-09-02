@@ -78,5 +78,17 @@ if (-not (Test-Path (Join-Path $root $specMdNotif))) {
 Write-Error "docs_guard: $specMdNotif missing"
 }
 
+$specMdI18n = "docs/specs/i18n_v1.md"
+
+if ($readmeText -notmatch [regex]::Escape($specMdI18n)) {
+  Write-Error "docs_guard: README must reference $specMdI18n"
+}
+if ($indexText -notmatch "i18n v1") {
+  Write-Error "docs_guard: index.md must mention i18n v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdI18n))) {
+  Write-Error "docs_guard: $specMdI18n missing"
+}
+
 Write-Host "docs_guard: OK"
 Exit 0
