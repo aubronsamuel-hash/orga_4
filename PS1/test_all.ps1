@@ -10,5 +10,11 @@ Write-Host "[test_all] Exporting employee spec..."
 Write-Host "[test_all] Running spec email regex tests..."
 & "$PSScriptRoot\tests\spec_employee_email_regex.ps1"
 
+Write-Host "[test_all] Exporting orgchart spec..."
+& "$PSScriptRoot\specs\export_org.ps1"
+
+Write-Host "[test_all] Running org hierarchy tests..."
+& "$PSScriptRoot\tests\spec_org_hierarchy.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0

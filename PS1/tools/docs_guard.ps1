@@ -4,8 +4,10 @@ Set-StrictMode -Version Latest
 $root = Resolve-Path "$PSScriptRoot\..\.."
 $readme = Join-Path $root "README.md"
 $index = Join-Path $root "docs\roadmap\index.md"
-$specMd = "docs/specs/employee_v1.md"
-$specJson = "docs/specs/employee_v1.json"
+$specMdEmp = "docs/specs/employee_v1.md"
+$specJsonEmp = "docs/specs/employee_v1.json"
+$specMdOrg = "docs/specs/orgchart_v1.md"
+$specJsonOrg = "docs/specs/orgchart_v1.json"
 
 if (-not (Test-Path $readme)) { Write-Error "docs_guard: README.md missing" }
 if (-not (Test-Path $index)) { Write-Error "docs_guard: docs/roadmap/index.md missing" }
@@ -13,14 +15,24 @@ if (-not (Test-Path $index)) { Write-Error "docs_guard: docs/roadmap/index.md mi
 $readmeText = Get-Content -Raw -LiteralPath $readme
 $indexText  = Get-Content -Raw -LiteralPath $index
 
-if ($readmeText -notmatch [regex]::Escape($specMd)) {
-  Write-Error "docs_guard: README must reference $specMd"
+if ($readmeText -notmatch [regex]::Escape($specMdEmp)) {
+  Write-Error "docs_guard: README must reference $specMdEmp"
 }
 if ($indexText -notmatch "Employe v1") {
   Write-Error "docs_guard: index.md must mention Employe v1"
 }
-if (-not (Test-Path (Join-Path $root $specMd))) { Write-Error "docs_guard: $specMd missing" }
-if (-not (Test-Path (Join-Path $root $specJson))) { Write-Error "docs_guard: $specJson missing" }
+if (-not (Test-Path (Join-Path $root $specMdEmp))) { Write-Error "docs_guard: $specMdEmp missing" }
+if (-not (Test-Path (Join-Path $root $specJsonEmp))) { Write-Error "docs_guard: $specJsonEmp missing" }
+
+# Nouveaux checks Organigramme v1
+if ($readmeText -notmatch [regex]::Escape($specMdOrg)) {
+  Write-Error "docs_guard: README must reference $specMdOrg"
+}
+if ($indexText -notmatch "Organigramme v1") {
+  Write-Error "docs_guard: index.md must mention Organigramme v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdOrg))) { Write-Error "docs_guard: $specMdOrg missing" }
+if (-not (Test-Path (Join-Path $root $specJsonOrg))) { Write-Error "docs_guard: $specJsonOrg missing" }
 
 Write-Host "docs_guard: OK"
 Exit 0

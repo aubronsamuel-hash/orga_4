@@ -11,22 +11,44 @@ pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
 - Copier `.env.example` vers `.env` et ajuster si besoin (aucun secret).
 
 ## Roadmap
-La roadmap est scindee en 20 fichiers de 10 etapes chacun sous `docs/roadmap`. 
+La roadmap est scindee en 20 fichiers de 10 etapes chacun sous `docs/roadmap`.
 Consulter `docs/roadmap/index.md` pour l'index, les themes, et les regles d'edition.
 Le job CI `roadmap-guard` valide la coherence (fichiers, etapes, sections).
 
 ## Specs RH (Etape 1)
 - Spec: `docs/specs/employee_v1.md` (version 1.0.0) et JSON `docs/specs/employee_v1.json`.
-- Export (regenerer):  
+- Export (regenerer):
 ```
 
 pwsh -NoLogo -NoProfile -File PS1\specs\export_employe.ps1
 
 ```
-- Tests (regex email, 1 OK + 1 KO):  
+- Tests (regex email, 1 OK + 1 KO):
 ```
 
 pwsh -NoLogo -NoProfile -File PS1\tests\spec_employee_email_regex.ps1
+
+```
+- Packs rapides:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+
+```
+
+## Organigramme v1 (Etape 2)
+- Specs: `docs/specs/orgchart_v1.md` et JSON `docs/specs/orgchart_v1.json`.
+- Export:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\specs\export_org.ps1
+
+```
+- Tests (hierarchie):
+```
+
+pwsh -NoLogo -NoProfile -File PS1\tests\spec_org_hierarchy.ps1
 
 ```
 - Packs rapides:

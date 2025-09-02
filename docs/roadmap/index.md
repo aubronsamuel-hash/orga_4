@@ -1,13 +1,14 @@
 # Feuille de route (200 etapes)
 
-Cette feuille de route couvre le perimetre complet d'une application RH integree avec module Evenementiel interne. 
-Source initiale: "Feuille de route integree RH & Evenements internes" (document transmis par l'utilisateur). 
-Les rubriques ont ete reorganisees en 20 fichiers de 10 etapes chacun, pour un total de 200 etapes. 
+Cette feuille de route couvre le perimetre complet d'une application RH integree avec module Evenementiel interne.
+Source initiale: "Feuille de route integree RH & Evenements internes" (document transmis par l'utilisateur).
+Les rubriques ont ete reorganisees en 20 fichiers de 10 etapes chacun, pour un total de 200 etapes.
 Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acceptation, Notes.
 
 ## Table des fichiers (10 etapes par fichier)
 - **roadmap_01-10.md (Actif)** : RH de base & planification (1-10) — Etapes detaillees (specs, tests, criteres).
   - Etape 1 - Gestion des employes: spec Employe v1 -> docs/specs/employee_v1.md (v1.0.0).
+  - Etape 2 - Organigramme v1: voir docs/specs/orgchart_v1.md (v1.0.0). Contraintes: pas d'auto-reference, pas de cycles, N subordonnes autorises.
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
