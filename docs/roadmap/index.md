@@ -9,6 +9,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
 - **roadmap_01-10.md (Actif)** : RH de base & planification (1-10) — Etapes detaillees (specs, tests, criteres).
   - Etape 1 - Gestion des employes: spec Employe v1 -> docs/specs/employee_v1.md (v1.0.0).
   - Etape 2 - Organigramme v1: voir docs/specs/orgchart_v1.md (v1.0.0). Contraintes: pas d'auto-reference, pas de cycles, N subordonnes autorises.
+  - Etape 3 - Roles et permissions (RBAC v1): voir docs/specs/rbac_v1.md (v1.0.0). Matrice CSV docs/specs/rbac_v1.csv.
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)

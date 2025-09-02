@@ -16,5 +16,10 @@ Write-Host "[smoke] Export orgchart spec..."
 Write-Host "[smoke] Org hierarchy quick test..."
 & "$PSScriptRoot\tests\spec_org_hierarchy.ps1"
 
+Write-Host "[smoke] Export RBAC spec..."
+& "$PSScriptRoot\specs\export_rbac.ps1"
+Write-Host "[smoke] RBAC quick test..."
+& "$PSScriptRoot\tests\spec_rbac_permissions.ps1"
+
 Write-Host "[smoke] OK"
 Exit 0

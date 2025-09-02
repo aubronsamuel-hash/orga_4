@@ -59,6 +59,28 @@ pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
 
 ```
 
+## RBAC v1 (Etape 3)
+- Specs: `docs/specs/rbac_v1.md` et CSV `docs/specs/rbac_v1.csv`.
+- Export (regenerer):
+```
+
+pwsh -NoLogo -NoProfile -File PS1\specs\export_rbac.ps1
+
+```
+- Tests:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\tests\spec_rbac_permissions.ps1
+
+```
+- Packs rapides:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+
+```
+
 ## Scripts
 - `PS1\dev_up.ps1` : mise en route locale (etape 0: no-op).
 - `PS1\test_all.ps1` : lance le garde-fou de la roadmap.

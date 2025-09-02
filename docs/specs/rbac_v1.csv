@@ -1,0 +1,16 @@
+resource,action,admin,manager,employe
+employees,read:list,allow,allow,allow
+employees,read:detail,allow,allow,allow
+employees,create,allow,allow,deny
+employees,update,allow,allow,deny
+employees,delete,allow,deny,deny
+org_units,read:list,allow,allow,allow
+org_units,read:detail,allow,allow,allow
+org_units,create,allow,deny,deny
+org_units,update,allow,deny,deny
+org_units,delete,allow,deny,deny
+schedules,read:list,allow,allow,allow
+schedules,read:detail,allow,allow,allow
+schedules,create,allow,allow,deny
+schedules,update,allow,allow,deny
+schedules,delete,allow,deny,deny

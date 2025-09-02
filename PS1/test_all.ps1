@@ -16,5 +16,10 @@ Write-Host "[test_all] Exporting orgchart spec..."
 Write-Host "[test_all] Running org hierarchy tests..."
 & "$PSScriptRoot\tests\spec_org_hierarchy.ps1"
 
+Write-Host "[test_all] Exporting RBAC spec..."
+& "$PSScriptRoot\specs\export_rbac.ps1"
+Write-Host "[test_all] Running RBAC tests..."
+& "$PSScriptRoot\tests\spec_rbac_permissions.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0
