@@ -1,0 +1,2 @@
+id;nom;prenom;email;telephone;role_metier;service;site;statut;date_entree;date_sortie;contrat_type;temps_travail;manager_email
+;courtois;alice;alice.courtois@example.com;;administratif;RH;PARIS;actif;2025-01-10;;CDI;100;

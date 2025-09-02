@@ -101,5 +101,17 @@ if (-not (Test-Path (Join-Path $root $specMdCF))) {
   Write-Error "docs_guard: $specMdCF missing"
 }
 
+$specMdImport = "docs/specs/import_export_v1.md"
+
+if ($readmeText -notmatch [regex]::Escape($specMdImport)) {
+  Write-Error "docs_guard: README must reference $specMdImport"
+}
+if ($indexText -notmatch "Import/Export v1") {
+  Write-Error "docs_guard: index.md must mention Import/Export v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdImport))) {
+  Write-Error "docs_guard: $specMdImport missing"
+}
+
 Write-Host "docs_guard: OK"
 Exit 0

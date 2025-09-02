@@ -40,5 +40,7 @@ Write-Host "[smoke] Export i18n..."
 & "$PSScriptRoot\specs\export_custom_fields.ps1"
 & "$PSScriptRoot\tests\spec_custom_fields_validate.ps1"
 
+& "$PSScriptRoot\specs\export_import.ps1"
+& "$PSScriptRoot\tests\spec_import_csv.ps1"
 Write-Host "[smoke] OK"
 Exit 0
