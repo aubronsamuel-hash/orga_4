@@ -1,0 +1,17 @@
+name: roadmap-guard
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+jobs:
+  roadmap:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run roadmap guard
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          Set-StrictMode -Version Latest
+          ./PS1/tools/roadmap_guard.ps1
