@@ -6,7 +6,7 @@ Les rubriques ont ete reorganisees en 20 fichiers de 10 etapes chacun, pour un t
 Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acceptation, Notes.
 
 ## Table des fichiers (10 etapes par fichier)
-- roadmap_01-10.md : RH de base & planification (1-10)
+- **roadmap_01-10.md (Actif)** : RH de base & planification (1-10) — Etapes detaillees (specs, tests, criteres).
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
