@@ -90,5 +90,16 @@ if (-not (Test-Path (Join-Path $root $specMdI18n))) {
   Write-Error "docs_guard: $specMdI18n missing"
 }
 
+$specMdCF = "docs/specs/custom_fields_v1.md"
+if ($readmeText -notmatch [regex]::Escape($specMdCF)) {
+  Write-Error "docs_guard: README must reference $specMdCF"
+}
+if ($indexText -notmatch "Custom Fields v1") {
+  Write-Error "docs_guard: index.md must mention Custom Fields v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdCF))) {
+  Write-Error "docs_guard: $specMdCF missing"
+}
+
 Write-Host "docs_guard: OK"
 Exit 0

@@ -39,5 +39,10 @@ Write-Host "[test_all] Exporting i18n spec..."
 Write-Host "[test_all] Running i18n policy tests..."
 & "$PSScriptRoot\tests\spec_i18n_policy.ps1"
 
+Write-Host "[test_all] Exporting custom fields spec..."
+& "$PSScriptRoot\specs\export_custom_fields.ps1"
+Write-Host "[test_all] Running custom fields tests..."
+& "$PSScriptRoot\tests\spec_custom_fields_validate.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0

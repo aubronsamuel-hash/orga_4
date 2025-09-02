@@ -14,6 +14,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 5 - Parametres entreprise: voir `docs/specs/org_settings_v1.md` (v1.0.0). Parametres critiques: timezone_default, devise_default, locale_default, formats.
   - Etape 6 - Notifications systeme: voir `docs/specs/notifications_v1.md` (v1.0.0). Triggers + templates (placeholders {{var}}).
   - Etape 7 - Support multilingue (UI): voir `docs/specs/i18n_v1.md` (i18n v1.0.0). Fallback -> FR; cles `domaine.sousdomaine.element`.
+  - Etape 8 - Champs personnalises: voir `docs/specs/custom_fields_v1.md` (v1.0.0). Types: string/int/date/enum; unicite du name par scope.
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
@@ -41,6 +42,8 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
 - [Auth v1](../specs/auth_v1.md)
 - [Org Settings v1](../specs/org_settings_v1.md)
 - [Notifications v1](../specs/notifications_v1.md)
+- [i18n v1](../specs/i18n_v1.md)
+- [Custom Fields v1](../specs/custom_fields_v1.md)
 
 ## Rattachements aux themes de la source fournie
 - RH de base & planification: employes, organigramme, roles, auth, parametres, notifications, multilingue, champs personnalises, import/export, journalisation, plannings, disponibilites, conflits, auto-planification, sync calendrier, historique, multi-sites, creneaux speciaux, notifications planning, rapports planning.
