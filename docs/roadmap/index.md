@@ -12,6 +12,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 3 - Roles et permissions: voir `docs/specs/rbac_v1.md` (v1.0.0).
   - Etape 4 - Authentification: voir `docs/specs/auth_v1.md` (v1.0.0). Politique MDP 12+, verrou 5/15 min, messages FR.
   - Etape 5 - Parametres entreprise: voir `docs/specs/org_settings_v1.md` (v1.0.0). Parametres critiques: timezone_default, devise_default, locale_default, formats.
+  - Etape 6 - Notifications systeme: voir `docs/specs/notifications_v1.md` (v1.0.0). Triggers + templates (placeholders {{var}}).
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
@@ -38,6 +39,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
 - [RBAC v1](../specs/rbac_v1.md)
 - [Auth v1](../specs/auth_v1.md)
 - [Org Settings v1](../specs/org_settings_v1.md)
+- [Notifications v1](../specs/notifications_v1.md)
 
 ## Rattachements aux themes de la source fournie
 - RH de base & planification: employes, organigramme, roles, auth, parametres, notifications, multilingue, champs personnalises, import/export, journalisation, plannings, disponibilites, conflits, auto-planification, sync calendrier, historique, multi-sites, creneaux speciaux, notifications planning, rapports planning.

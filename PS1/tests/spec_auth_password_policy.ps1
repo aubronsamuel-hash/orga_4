@@ -6,7 +6,7 @@ $MinLen = 12
 $reUpper = '[A-Z]'
 $reLower = '[a-z]'
 $reDigit = '[0-9]'
-$reSpec  = '[!@#$%^&*()_+\-=\[\]{};:\'"",.<>\/\?`~\\]'
+$reSpec  = '[!@#$%^&*()_+\-=\[\]{};:''"",.<>\/\?`~\\]'
 $blacklist = @("password","123456","qwerty","azerty")
 
 function Test-Password {

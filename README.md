@@ -125,6 +125,28 @@ pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
 
 ```
 
+## Notifications v1 (Etape 6)
+- Spec: `docs/specs/notifications_v1.md` (v1.0.0).
+- Export:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\specs\export_notifications.ps1
+
+```
+- Tests (rendu de template):
+```
+
+pwsh -NoLogo -NoProfile -File PS1\tests\spec_notifications_render.ps1
+
+```
+- Packs rapides:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+
+```
+
 ## Scripts
 - `PS1\dev_up.ps1` : mise en route locale (etape 0: no-op).
 - `PS1\test_all.ps1` : lance le garde-fou de la roadmap.
