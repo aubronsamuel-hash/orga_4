@@ -10,6 +10,7 @@ $specMdOrg = "docs/specs/orgchart_v1.md"
 $specJsonOrg = "docs/specs/orgchart_v1.json"
 $specMdRBAC = "docs/specs/rbac_v1.md"
 $specCsvRBAC= "docs/specs/rbac_v1.csv"
+$specMdAuth = "docs/specs/auth_v1.md"
 
 if (-not (Test-Path $readme)) { Write-Error "docs_guard: README.md missing" }
 if (-not (Test-Path $index)) { Write-Error "docs_guard: docs/roadmap/index.md missing" }
@@ -45,6 +46,15 @@ if ($indexText -notmatch "RBAC v1") {
 }
 if (-not (Test-Path (Join-Path $root $specMdRBAC))) { Write-Error "docs_guard: $specMdRBAC missing" }
 if (-not (Test-Path (Join-Path $root $specCsvRBAC))) { Write-Error "docs_guard: $specCsvRBAC missing" }
+
+# Auth v1 checks
+if ($readmeText -notmatch [regex]::Escape($specMdAuth)) {
+  Write-Error "docs_guard: README must reference $specMdAuth"
+}
+if ($indexText -notmatch "Auth v1") {
+  Write-Error "docs_guard: index.md must mention Auth v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdAuth))) { Write-Error "docs_guard: $specMdAuth missing" }
 
 Write-Host "docs_guard: OK"
 Exit 0

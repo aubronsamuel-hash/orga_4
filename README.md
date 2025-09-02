@@ -81,6 +81,28 @@ pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
 
 ```
 
+## Auth v1 (Etape 4)
+- Spec: `docs/specs/auth_v1.md` (v1.0.0).
+- Export:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\specs\export_auth.ps1
+
+```
+- Tests (politique MDP):
+```
+
+pwsh -NoLogo -NoProfile -File PS1\tests\spec_auth_password_policy.ps1
+
+```
+- Packs rapides:
+```
+
+pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+
+```
+
 ## Scripts
 - `PS1\dev_up.ps1` : mise en route locale (etape 0: no-op).
 - `PS1\test_all.ps1` : lance le garde-fou de la roadmap.
