@@ -1,0 +1,26 @@
+{ "version": "1.0.0", "entity": "employee",
+  "fields": [
+    {"name":"id","type":"uuid","required":true},
+    {"name":"nom","type":"string","required":true,"min_length":2,"max_length":100},
+    {"name":"prenom","type":"string","required":true,"min_length":1,"max_length":100},
+    {"name":"email","type":"string","required":true,"unique":true,"pattern":"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"},
+    {"name":"telephone","type":"string","required":false,"pattern":"^[0-9+(). -]{7,20}$"},
+    {"name":"role_metier","type":"string","required":false,"enum":["regisseur","technicien","administratif","autre"]},
+    {"name":"service","type":"string","required":false,"nullable":true},
+    {"name":"site","type":"string","required":false,"nullable":true},
+    {"name":"statut","type":"string","required":false,"enum":["actif","inactif","archive"],"default":"actif"},
+    {"name":"date_entree","type":"date","required":false,"nullable":true},
+    {"name":"date_sortie","type":"date","required":false,"nullable":true},
+    {"name":"contrat_type","type":"string","required":false,"enum":["CDI","CDD","Intermittent","Freelance","Stage","Autre"]},
+    {"name":"temps_travail","type":"number","required":false,"min":0,"max":100},
+    {"name":"manager_id","type":"uuid","required":false,"nullable":true,"relation":"employee.id"}
+  ],
+  "constraints": [
+    {"name":"email_unique","type":"unique","fields":["email"]},
+    {"name":"manager_not_self","type":"check","expression":"manager_id IS NULL OR manager_id <> id"},
+    {"name":"date_sortie_after_entree","type":"check","expression":"date_sortie IS NULL OR date_entree IS NULL OR date_sortie >= date_entree"}
+  ],
+  "pagination":{"default_limit":25,"max_limit":200},
+  "identifiers":{"primary_key":["id"],"natural_key":["email"]},
+  "validation":{"email_regex":"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$","telephone_regex":"^[0-9+(). -]{7,20}$"}
+}
