@@ -22,7 +22,17 @@ foreach ($f in $expectedFiles) {
   $p = Join-Path $roadmapDir $f
   if (-not (Test-Path $p)) { Write-Error "roadmap_guard: fichier manquant: docs\roadmap\$f" }
   $c = Get-Content -Raw $p -ErrorAction Stop
-  for ($i=1; $i -le 10; $i++) {
+  if ($f -match 'roadmap_(\d+)-(\d+)\.md') {
+    $start = [int]$Matches[1]
+    $end = [int]$Matches[2]
+    if ($start -ne 1 -and $start -ne 11) {
+      $start = 1
+      $end = 10
+    }
+  } else {
+    Write-Error "roadmap_guard: nom de fichier invalide $f"
+  }
+  for ($i=$start; $i -le $end; $i++) {
     $anchor = "## Etape $i"
     if ($c -notmatch [regex]::Escape($anchor)) {
       Write-Error "roadmap_guard: etape manquante '$anchor' dans $f"
