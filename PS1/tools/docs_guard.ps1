@@ -113,5 +113,16 @@ if (-not (Test-Path (Join-Path $root $specMdImport))) {
   Write-Error "docs_guard: $specMdImport missing"
 }
 
+$specMdAudit = "docs/specs/audit_log_v1.md"
+if ($readmeText -notmatch [regex]::Escape($specMdAudit)) {
+  Write-Error "docs_guard: README must reference $specMdAudit"
+}
+if ($indexText -notmatch "Audit Log v1") {
+  Write-Error "docs_guard: index.md must mention Audit Log v1"
+}
+if (-not (Test-Path (Join-Path $root $specMdAudit))) {
+  Write-Error "docs_guard: $specMdAudit missing"
+}
+
 Write-Host "docs_guard: OK"
 Exit 0

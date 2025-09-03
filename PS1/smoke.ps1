@@ -42,5 +42,9 @@ Write-Host "[smoke] Export i18n..."
 
 & "$PSScriptRoot\specs\export_import.ps1"
 & "$PSScriptRoot\tests\spec_import_csv.ps1"
+Write-Host "[smoke] Export audit spec..."
+& "$PSScriptRoot\specs\export_audit.ps1"
+Write-Host "[smoke] Audit schema quick test..."
+& "$PSScriptRoot\tests\spec_audit_schema.ps1"
 Write-Host "[smoke] OK"
 Exit 0

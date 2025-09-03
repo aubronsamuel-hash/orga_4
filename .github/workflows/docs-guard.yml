@@ -23,6 +23,7 @@ jobs:
           ./PS1/specs/export_i18n.ps1
           ./PS1/specs/export_custom_fields.ps1
           ./PS1/specs/export_import.ps1
+          ./PS1/specs/export_audit.ps1
       - name: Run docs guard
         shell: pwsh
         run: |

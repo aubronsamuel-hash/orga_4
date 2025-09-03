@@ -49,5 +49,10 @@ Write-Host "[test_all] Exporting import/export spec & samples..."
 Write-Host "[test_all] Running import/export CSV tests..."
 & "$PSScriptRoot\tests\spec_import_csv.ps1"
 
+Write-Host "[test_all] Exporting audit spec..."
+& "$PSScriptRoot\specs\export_audit.ps1"
+Write-Host "[test_all] Running audit schema tests..."
+& "$PSScriptRoot\tests\spec_audit_schema.ps1"
+
 Write-Host "[test_all] DONE"
 Exit 0
