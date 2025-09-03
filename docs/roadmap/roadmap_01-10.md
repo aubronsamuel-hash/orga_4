@@ -185,3 +185,14 @@ Acceptation:
 Notes:
   - OpenTelemetry en option plus tard.
 
+## Etape 10.6 - Installation Backend FULL (FastAPI)
+Objectif: Installer un backend complet pret a l’emploi (API 8000) avec DB Postgres (5432), Redis (6379), migrations, seeds, logs JSON, request_id, en-tetes de securite, CORS, rate limiting, pagination utilitaire, CI et audits.
+Livrables: code backend structure, Alembic 0001_init, seeds, scripts PowerShell (install/up/down/migrate/seed/tests/audits/smoke), compose.dev pour DB/Redis, READMEs FR.
+Scripts: PS1\be_install.ps1, be_up.ps1, be_down.ps1, be_migrate.ps1, be_seed.ps1, be_tests.ps1, be_audit.ps1, smoke.ps1.
+Tests:
+- OK: GET /api/v1/health -> 200 {"status":"ok"}.
+- OK: Alembic upgrade head -> tables orgs/users presentes.
+- KO: depassement rate limit -> 429.
+CI Gates: ruff (lint) OK, mypy strict OK, pytest+cov >= 80%, pip-audit OK, SBOM genere, docs_guard + roadmap_guard OK.
+Acceptation: dev_up+migrate+seed OK en local Windows; smoke OK; CI verte; README FR mis a jour; pas de secrets.
+Notes: DB en Docker (compose.dev). API lancee sur host (Python venv). UTC en DB.

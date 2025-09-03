@@ -2,9 +2,12 @@
 
 ## Quickstart Windows
 ```
-pwsh -NoLogo -NoProfile -File PS1\dev_up.ps1
-pwsh -NoLogo -NoProfile -File PS1\test_all.ps1
+pwsh -NoLogo -NoProfile -File PS1\be_install.ps1
+pwsh -NoLogo -NoProfile -File PS1\be_up.ps1
+pwsh -NoLogo -NoProfile -File PS1\be_migrate.ps1
+pwsh -NoLogo -NoProfile -File PS1\be_seed.ps1
 pwsh -NoLogo -NoProfile -File PS1\smoke.ps1
+pwsh -NoLogo -NoProfile -File PS1\be_tests.ps1
 ```
 
 ## Environnements

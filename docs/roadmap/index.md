@@ -17,6 +17,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 8 - Champs personnalises: voir `docs/specs/custom_fields_v1.md` (v1.0.0). Types: string/int/date/enum; unicite du name par scope.
   - Etape 9 - Import/Export de donnees: voir `docs/specs/import_export_v1.md` (v1.0.0). CSV employes (UTF-8, ;) + unicite email intra-fichier.
   - Etape 10 - Journalisation (Audit Log v1): voir `docs/specs/audit_log_v1.md` (v1.0.0). Champs requis + timestamp ISO UTC ("Z").
+  - Etape 10.6 - Installation Backend FULL (FastAPI): backend complet, Postgres/Redis, migrations, scripts PS1.
 - **roadmap_11-20.md (Actif)** : RH de base & planification (11-20) - Etapes detaillees (specs, tests, criteres).
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
