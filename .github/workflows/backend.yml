@@ -1,0 +1,43 @@
+name: backend
+on:
+  pull_request:
+    paths:
+      - "backend/**"
+      - "deploy/**"
+      - "PS1/**"
+      - "docs/**"
+      - ".github/workflows/backend.yml"
+jobs:
+  backend:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install deps
+        run: |
+          python -m venv backend/.venv
+          backend/.venv/bin/python -m pip install --upgrade pip
+          backend/.venv/bin/pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+      - name: Lint + Typecheck
+        run: |
+          backend/.venv/bin/ruff check backend
+          backend/.venv/bin/mypy backend
+      - name: Tests
+        run: |
+          cd backend
+          ../backend/.venv/bin/pytest --maxfail=1 --disable-warnings --cov=app --cov-report=xml
+      - name: Pip audit
+        run: backend/.venv/bin/pip-audit -r backend/requirements.txt
+      - name: SBOM
+        run: |
+          backend/.venv/bin/pip-licenses --format=json --output-file sbom.json
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: backend/coverage.xml

@@ -1,0 +1,6 @@
+backend/.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+sbom.json
+__pycache__/
