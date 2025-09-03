@@ -6,7 +6,7 @@ Les rubriques ont ete reorganisees en 20 fichiers de 10 etapes chacun, pour un t
 Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acceptation, Notes.
 
 ## Table des fichiers (10 etapes par fichier)
-- **roadmap_01-10.md (Actif)** : RH de base & planification (1-10) — Etapes detaillees (specs, tests, criteres).
+- **roadmap_01-10.md (Actif)** : RH de base & planification (1-10) - Etapes detaillees (specs, tests, criteres).
   - Etape 1 - Gestion des employes: voir `docs/specs/employee_v1.md` (v1.0.0).
   - Etape 2 - Organigramme: voir `docs/specs/orgchart_v1.md` (v1.0.0).
   - Etape 3 - Roles et permissions: voir `docs/specs/rbac_v1.md` (v1.0.0).
@@ -17,7 +17,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 8 - Champs personnalises: voir `docs/specs/custom_fields_v1.md` (v1.0.0). Types: string/int/date/enum; unicite du name par scope.
   - Etape 9 - Import/Export de donnees: voir `docs/specs/import_export_v1.md` (v1.0.0). CSV employes (UTF-8, ;) + unicite email intra-fichier.
   - Etape 10 - Journalisation (Audit Log v1): voir `docs/specs/audit_log_v1.md` (v1.0.0). Champs requis + timestamp ISO UTC ("Z").
-- roadmap_11-20.md : RH de base & planification (11-20)
+- **roadmap_11-20.md (Actif)** : RH de base & planification (11-20) - Etapes detaillees (specs, tests, criteres).
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
 - roadmap_41-50.md : Paie & documents RH (41-50)
