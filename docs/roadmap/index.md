@@ -16,6 +16,7 @@ Chaque etape contient: Titre, Objectif, Livrables, Scripts, Tests, CI Gates, Acc
   - Etape 7 - Support multilingue (UI): voir `docs/specs/i18n_v1.md` (i18n v1.0.0). Fallback -> FR; cles `domaine.sousdomaine.element`.
   - Etape 8 - Champs personnalises: voir `docs/specs/custom_fields_v1.md` (v1.0.0). Types: string/int/date/enum; unicite du name par scope.
   - Etape 9 - Import/Export de donnees: voir `docs/specs/import_export_v1.md` (v1.0.0). CSV employes (UTF-8, ;) + unicite email intra-fichier.
+  - Etape 10 - Journalisation (Audit Log v1): voir `docs/specs/audit_log_v1.md` (v1.0.0). Champs requis + timestamp ISO UTC ("Z").
 - roadmap_11-20.md : RH de base & planification (11-20)
 - roadmap_21-30.md : Conges, absences, temps (21-30)
 - roadmap_31-40.md : Conges, absences, temps (31-40)
