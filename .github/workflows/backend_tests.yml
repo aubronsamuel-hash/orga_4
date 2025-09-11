@@ -35,6 +35,12 @@ jobs:
             pip install pytest pytest-cov
           fi
       - name: Run pytest
+        working-directory: backend
         run: |
-          if [ -d "backend" ]; then cd backend; fi
           pytest --cov=app --cov-report=term-missing --cov-fail-under=90
+
+      - name: Init repo PS1
+        shell: pwsh
+        working-directory: ${{ github.workspace }}
+        run: |
+          ./PS1/init_repo.ps1 -Verbose

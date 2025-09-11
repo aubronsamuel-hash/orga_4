@@ -1,0 +1,12 @@
+[run]
+source = app
+branch = True
+omit =
+    app/__init__.py
+    app/migrations/*
+    app/alembic/*
+    app/*/__init__.py
+
+[report]
+show_missing = True
+skip_covered = False
