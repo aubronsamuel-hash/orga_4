@@ -1,0 +1,40 @@
+name: backend-tests
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend_tests.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend_tests.yml'
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test deps
+        run: |
+          set -e
+          if [ -f "backend/requirements-dev.txt" ]; then
+            pip install -r backend/requirements-dev.txt
+          elif [ -f "backend/requirements.txt" ]; then
+            pip install -r backend/requirements.txt
+            pip install pytest pytest-cov
+          elif [ -f "backend/pyproject.toml" ]; then
+            if command -v pipx >/dev/null 2>&1; then pipx install poetry || true; fi
+            if ! command -v poetry >/dev/null 2>&1; then pip install poetry; fi
+            poetry install
+            (poetry add -G dev pytest pytest-cov) || (poetry add --group dev pytest pytest-cov)
+          else
+            pip install pytest pytest-cov
+          fi
+      - name: Run pytest
+        run: |
+          if [ -d "backend" ]; then cd backend; fi
+          pytest --cov=app --cov-report=term-missing --cov-fail-under=90
