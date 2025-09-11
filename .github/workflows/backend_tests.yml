@@ -15,6 +15,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Locate init_repo.ps1
+        id: find_init
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Workspace: $GITHUB_WORKSPACE"
+          # Lister pour debug
+          ls -la
+          # Trouver un chemin de type */PS1/init_repo.ps1 versionnee par git
+          FOUND="$(git ls-files | grep -E '(^|/)PS1/init_repo\.ps1$' || true)"
+          if [ -n "$FOUND" ]; then
+            echo "Found: $FOUND"
+            echo "init=$FOUND" >> "$GITHUB_OUTPUT"
+          else
+            echo "No PS1/init_repo.ps1 found. Skipping."
+            echo "init=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run init_repo.ps1
+        if: ${{ steps.find_init.outputs.init != '' }}
+        shell: pwsh
+        run: |
+          $path = Join-Path "${{ github.workspace }}" "${{ steps.find_init.outputs.init }}"
+          Write-Host "Running $path -Verbose"
+          # Normaliser eventuelles fins de lignes CRLF/LF si besoin:
+          # (Get-Content -Raw $path) -replace "`r`n","`n" | Set-Content -NoNewline $path
+          & $path -Verbose
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -38,9 +65,3 @@ jobs:
         working-directory: backend
         run: |
           pytest --cov=app --cov-report=term-missing --cov-fail-under=90
-
-      - name: Init repo PS1
-        shell: pwsh
-        working-directory: ${{ github.workspace }}
-        run: |
-          ./PS1/init_repo.ps1 -Verbose
