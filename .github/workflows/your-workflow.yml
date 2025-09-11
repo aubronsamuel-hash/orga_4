@@ -9,11 +9,24 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - name: Locate init_repo.ps1
+        id: find_init
+        shell: bash
+        run: |
+          set -euo pipefail
+          FOUND="$(git ls-files | grep -E '(^|/)PS1/init_repo\.ps1$' || true)"
+          if [ -n "$FOUND" ]; then
+            echo "init=$FOUND" >> "$GITHUB_OUTPUT"
+          else
+            echo "init=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run init_repo.ps1
+        if: ${{ steps.find_init.outputs.init != '' }}
+        shell: pwsh
+        run: |
+          & "${{ github.workspace }}/${{ steps.find_init.outputs.init }}" -Verbose
 
       - name: Check pwsh version
         shell: pwsh
         run: pwsh -v
-
-      - name: Run init script
-        shell: pwsh
-        run: ./PS1/init_repo.ps1 -Verbose
